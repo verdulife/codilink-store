@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <section class="flex h-screen items-center justify-center">
+    <h1
+      class="bg-[url('/bg.jpg')] bg-clip-text bg-repeat-x text-9xl font-bold text-transparent"
+    >
+      Work in progress
+    </h1>
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    background-position-x: 0%;
+    animation: bg 60s linear infinite;
+  }
+
+  @keyframes bg {
+    to {
+      background-position-x: -500%;
+    }
+  }
+</style>
