@@ -1,6 +1,8 @@
 ---
+import Nav from "@/components/Nav.astro";
+
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,21 +10,26 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="text-gray-50 bg-gray-800">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="bg-slate-950 bg-[url('/pattern-dark.jpg')] text-slate-50 bg-blend-screen"
+  >
+    <Nav />
+    <main class="mx-auto max-w-7xl">
+      <slot />
+    </main>
+  </body>
 </html>
 
 <style is:global>
-	:root {
-		scroll-behavior: smooth;
-	}
+  :root {
+    scroll-behavior: smooth;
+  }
 </style>

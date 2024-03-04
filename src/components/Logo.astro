@@ -1,0 +1,18 @@
+<span class:list={["text-center", Astro.props.class]}>
+  codi.link <span
+    class="inline-flex items-center rounded-xl bg-[url('/bg.jpg')] bg-repeat-x px-4 pb-4 font-bold text-slate-950 text-transparent"
+    >store</span
+  >
+</span>
+
+<style>
+  span > span {
+    animation: bg 60s linear infinite;
+  }
+
+  @keyframes bg {
+    to {
+      background-position-x: -500%;
+    }
+  }
+</style>

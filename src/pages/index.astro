@@ -1,26 +1,67 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
+import Logo from "@/components/Logo.astro";
+import SnippetCard from "@/components/SnippetCard.astro";
+import SearchIcon from "@/icons/Search.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <section class="flex h-screen items-center justify-center">
-    <h1
-      class="bg-[url('/bg.jpg')] bg-clip-text bg-repeat-x text-9xl font-bold text-transparent"
-    >
-      Work in progress
+<Layout title="codi.link STORE | Snippets 100% gratuitos">
+  <section class="flex flex-col items-center pt-36 pb-48">
+    <Logo class="text-6xl" />
+
+    <h1 class="mt-4 text-center text-6xl font-bold text-slate-300">
+      Una tienda de snippets 100% gratuita por y para desarrolladores
     </h1>
+
+    <div class="mt-16 flex w-full items-center justify-center">
+      <label
+        class="flex w-1/2 gap-4 rounded-xl border border-slate-700 bg-slate-800 p-4"
+      >
+        <span>
+          <SearchIcon class="opacity-50" />
+        </span>
+
+        <input
+          type="search"
+          placeholder="Buscar snippets..."
+          class="w-full bg-transparent font-semibold outline-none"
+        />
+      </label>
+    </div>
+  </section>
+
+  <section class="flex flex-col items-center">
+    <ul class="flex flex-wrap justify-center gap-4">
+      <li>
+        <SnippetCard />
+      </li>
+      <li>
+        <SnippetCard />
+      </li>
+      <li>
+        <SnippetCard />
+      </li>
+      <li>
+        <SnippetCard />
+      </li>
+      <li>
+        <SnippetCard />
+      </li>
+      <li>
+        <SnippetCard />
+      </li>
+      <li>
+        <SnippetCard />
+      </li>
+      <li>
+        <SnippetCard />
+      </li>
+      <li>
+        <SnippetCard />
+      </li>
+      <li>
+        <SnippetCard />
+      </li>
+    </ul>
   </section>
 </Layout>
-
-<style>
-  h1 {
-    background-position-x: 0%;
-    animation: bg 60s linear infinite;
-  }
-
-  @keyframes bg {
-    to {
-      background-position-x: -500%;
-    }
-  }
-</style>
