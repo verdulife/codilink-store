@@ -3,10 +3,11 @@ import Layout from "@/layouts/Layout.astro";
 import Logo from "@/components/Logo.astro";
 import SnippetCard from "@/components/SnippetCard.astro";
 import SearchIcon from "@/icons/Search.astro";
+import { data } from "@/lib/mock";
 ---
 
 <Layout title="codi.link STORE | Snippets 100% gratuitos">
-  <section class="flex flex-col items-center pt-36 pb-48 max-w-4xl">
+  <section class="flex max-w-4xl flex-col items-center pb-48 pt-36">
     <Logo class="text-8xl" />
 
     <h1 class="mt-10 text-center text-5xl font-bold text-slate-300">
@@ -32,36 +33,13 @@ import SearchIcon from "@/icons/Search.astro";
 
   <section class="flex flex-col items-center">
     <ul class="flex flex-wrap justify-center gap-4">
-      <li>
-        <SnippetCard />
-      </li>
-      <li>
-        <SnippetCard />
-      </li>
-      <li>
-        <SnippetCard />
-      </li>
-      <li>
-        <SnippetCard />
-      </li>
-      <li>
-        <SnippetCard />
-      </li>
-      <li>
-        <SnippetCard />
-      </li>
-      <li>
-        <SnippetCard />
-      </li>
-      <li>
-        <SnippetCard />
-      </li>
-      <li>
-        <SnippetCard />
-      </li>
-      <li>
-        <SnippetCard />
-      </li>
+      {
+        data.map((item) => (
+          <li>
+            <SnippetCard data={item} />
+          </li>
+        ))
+      }
     </ul>
   </section>
 </Layout>
